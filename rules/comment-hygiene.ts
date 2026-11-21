@@ -14,7 +14,11 @@ const PATTERNS: Record<string, RegExp> = {
   "removed-backend / provenance narration": /pre-IR|star\.ink|old-syntax|old bump|old per-item|old rest-of|old frame snap|old 4-word|old linear|old timeout|formerly|\.ml sources/i,
   "off-repo plan label": /typed-widths|slices plan|batch A|\bsteps? [0-9]/i,
   "off-repo decision label": /\bD7\b/,
-  "resolved-transition wording": /\bno longer\b|\bused to\b(?! warn\b)/i,
+  // "used to" narrates history only after a subject word. Aux-preceded
+  // passives ("is used to pin the viewer") are present tense, and so is
+  // "Used to pin the order." with an ellipsed subject — both exempt. The
+  // line-initial be-alternative has no passive reading; it stays flagged.
+  "resolved-transition wording": /\bno longer\b|(?<!\b(?:is|are|was|were|be|being|been) )\b(?:(?<=\w.*)used to\b(?! warn\b)|(?<!\w.*)used to be\b)/i,
 };
 
 const ALLOW: Record<string, string[] | undefined> = {
