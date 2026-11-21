@@ -1,0 +1,31 @@
+{
+  "name": "@rprtr258/eslint-rules",
+  "version": "0.1.0",
+  "description": "Personal ESLint rules, installable straight from GitHub",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./comment-hygiene": "./rules/comment-hygiene.ts",
+    "./no-boolean-literal-compare": "./rules/no-boolean-literal-compare.ts",
+    "./no-restating-comments": "./rules/no-restating-comments.ts",
+    "./no-unused-class-members": "./rules/no-unused-class-members.ts"
+  },
+  "scripts": {
+    "lint": "eslint '**/*.ts'",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "ci": "bun run lint && bun run typecheck && bun run test"
+  },
+  "dependencies": {
+    "@eslint/core": "^1.2.1",
+    "@typescript-eslint/utils": "^8.73.0",
+    "typescript": "6.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/bun": "^1.4.2",
+    "eslint": "^10.10.0",
+    "jiti": "^2.7.0",
+    "typescript-eslint": "^8.69.0"
+  }
+}
