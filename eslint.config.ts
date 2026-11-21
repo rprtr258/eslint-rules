@@ -34,6 +34,7 @@ export default defineConfig([
     rules: {
       "local/no-unused-class-members": "error",
       "local/comment-hygiene": "error",
+      "@typescript-eslint/array-type": "error",
       "local/no-boolean-literal-compare": "error",
       "local/no-restating-comments": "error",
     },
