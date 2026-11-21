@@ -12,14 +12,13 @@
   },
   "scripts": {
     "lint": "eslint '**/*.ts'",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "bun check",
     "test": "bun test",
     "ci": "bun run lint && bun run typecheck && bun run test"
   },
   "dependencies": {
     "@eslint/core": "^1.2.1",
-    "@typescript-eslint/utils": "^8.73.0",
-    "typescript": "6.0.3"
+    "@typescript-eslint/utils": "^8.73.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
